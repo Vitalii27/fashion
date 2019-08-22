@@ -1,0 +1,56 @@
+/* common.scss */
+
+/* selection */
+*::selection {
+  color: $dark-gray;
+  background: rgba($light-gray, 0.3);
+}
+
+:root {
+  font-size: $html-font-size;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+}
+
+body {
+  min-height: 100%;
+  width: 100%;
+  min-width: $content-min-width;
+  font-size: 1.4rem;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  color: $light-gray;
+  background: $white;
+  font-family: $default-fonts;
+  overflow-x: hidden;
+}
+
+.js body {
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: .75s;
+  transition-timing-function: ease-out;
+}
+
+/* common.scss end */
+
+.bg-image{
+  & > img{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+img{
+  max-width: 100%;
+}

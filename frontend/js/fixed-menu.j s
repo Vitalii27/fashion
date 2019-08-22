@@ -1,0 +1,43 @@
+$(document).ready(function(){
+	var headerHeight,
+			$menu = $(".js-fix-menu"),
+			$header = $(".js-f-m-header"),
+			$topBanners = $(".js-f-m-top-banners");
+	
+	
+	function setTopMenu(top) {
+		var scrollTop = $(window).scrollTop();
+		if (scrollTop <= top) {
+			$menu.css({
+				position: "absolute",
+				top: top
+			
+			});
+		} else {
+			$menu.css({
+				position: "fixed",
+				top: 0
+			});
+		}
+	}
+	
+	function getHeaderHeight() {
+		headerHeight = $header.outerHeight() + $topBanners.outerHeight();
+		setTopMenu(headerHeight);
+		//console.log(headerHeight);
+	}
+	getHeaderHeight();
+
+	$(window).on("load", function(){
+		getHeaderHeight();
+		$menu.css({
+			opacity: 1
+		});
+	});	
+	$(window).on("resize", function(){
+		getHeaderHeight();
+	});	
+	$(window).on("scroll", function(){
+		getHeaderHeight();
+	});
+}); // ready

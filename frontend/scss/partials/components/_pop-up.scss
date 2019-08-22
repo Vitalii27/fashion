@@ -1,0 +1,78 @@
+/* pop-up.scss */
+.pop-up-wrapper {
+  display: none;
+}
+
+.pop-up-is-showed {
+  overflow: hidden !important; // stop scroll when pop-up is open
+}
+
+/* overlay at start */
+.mfp-fade.mfp-bg {
+  opacity: 0;
+  transition: all 0.15s ease-out;
+}
+
+/* overlay animate in */
+.mfp-fade.mfp-bg.mfp-ready {
+  opacity: 0.8;
+}
+
+/* overlay animate out */
+.mfp-fade.mfp-bg.mfp-removing {
+  opacity: 0;
+}
+
+/* content at start */
+.mfp-fade.mfp-wrap .mfp-content {
+  opacity: 0;
+  transition: all 0.15s ease-out;
+  transform: translateY(50px);
+}
+
+/* content animate it */
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+/* content animate out */
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+  opacity: .1;
+  transform: translateY(50px);
+}
+
+.pop-up {
+  width: 100%;
+  max-width: 870px;
+  margin: 0 auto;
+  position: relative;
+  background-color: $white;
+  //opacity: 0;
+  //transform: translateY(-20px);
+  transition: all .15s;
+  .mfp-close {
+    font-size: 3.5rem;
+  }
+}
+
+.pop-up__title {
+  font-size: 1.8rem;
+  color: #666666;
+  line-height: 1.2;
+}
+
+.pop-up__text {
+  font-size: 1.6rem;
+  color: $black;
+  line-height: 1.2;
+  margin-bottom: 50px;
+}
+
+.pop-up__close {
+  display: inline-block;
+  appearance: button;
+  padding: 5px;
+}
+
+/* pop-up.scss end */

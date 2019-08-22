@@ -1,0 +1,77 @@
+.arrow-slide {
+
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 4.5rem;
+  height: 4.5rem;
+  &:before, &:after {
+    content: '';
+    display: block;
+    width: 3rem;
+    height: 1.5px;
+    background-color: $white;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.arrow-right-slide {
+  transform: rotate(180deg);
+  &:before {
+    transform: rotate(45deg);
+    top: 32px;
+  }
+  &:after {
+    transform: rotate(-45deg);
+    top: 11px;
+  }
+}
+
+.arrow-left-slide {
+
+  &:before {
+    transform: rotate(45deg);
+    top: 32px;
+  }
+  &:after {
+    transform: rotate(-45deg);
+    top: 11px;
+  }
+}
+
+.slider_btn {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  cursor: pointer;
+}
+
+.slider_btn--next {
+  right: 3rem;
+
+}
+
+.slider_btn--prev {
+  left: 3rem;
+}
+
+.slick-dots li button:before {
+  font-size: 11px !important;
+}
+
+.slick-dots li.slick-active button:before {
+  color: $orange !important;
+  font-size: 18px !important;
+}
+
+.slick-dots li {
+  margin: 0 !important;
+}
+
+.slick-dots {
+  bottom: -22px;
+}

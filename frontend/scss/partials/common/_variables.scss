@@ -1,0 +1,135 @@
+$html-font-size: 62.5%;
+/* breakpoints */
+$screen-xs: 0 !default; // 0
+//// Small screen / tablet
+$screen-sm: 36em !default; // 576px
+//// Medium screen / desktop
+$screen-md: 48em !default; // 768px
+//// Large screen
+$screen-lg: 62em !default; // 992px
+//// Extra large screen
+$screen-xl: 75em !default; // 1200px
+//// Super extra large screen
+//$screen-xxlg: 100em !default; // 1600px
+$grid-breakpoints: (
+        xs: 0,
+        sm: $screen-sm,
+        md: $screen-md,
+        lg: $screen-lg,
+        xl: $screen-xl
+) !default;
+
+$content-max-width: 117rem !default;
+$content-min-width: 30rem !default;
+
+// for min-width media
+//$screen-xs-min: $screen-xs !default; // from 768
+$screen-sm-min: $screen-sm !default; // from 577px
+$screen-md-min: $screen-md !default; // from 769px
+$screen-lg-min: $screen-lg !default; // from 993px
+$screen-xl-min: $screen-xl !default; // from 1201px
+//
+//// for max-width media
+$screen-xs-max: ($screen-sm - 0.0625) !default; // till 575
+$screen-sm-max: ($screen-md - 0.0625) !default; // till 769px
+$screen-md-max: ($screen-lg - 0.0625) !default; // till 991px
+$screen-lg-max: ($screen-xl - 0.0625) !default; // till 1199px
+//$screen-xlg-max: ($screen-xxl - 0.0625) !default; // till 1599
+
+/* color variables */
+$white: #fff; //const
+$black: #000; //const
+
+$red: #fc635e !default;
+//$red: $black !default;
+
+$white-smoke: #f2f2f2;
+$ghost-white: #ebebeb;
+$silver-gray: #cac9c9;
+$light-gray: #adadad;
+$light-2-gray: #868686;
+$medium-gray: #4f4d4d;
+$dark-gray: #212121;
+
+
+// variables
+
+// colors
+$primary-color: #334499;
+$secondary-color: #336699;
+
+$white: #fff;
+$light-white: #ced1e2;
+//$light-gray: #ccc;
+$medium-gray: #bbb;
+$medium-gray: #bbb;
+$dark-gray: #8E8E8E;
+//$black: #000;
+$danger-color: red;
+$warning-color: yellow;
+$success-color: green;
+
+$blueish-gray: #323548;
+$gray: #CBCBCB;
+$black: #282828;
+$blue: #3381CB;
+$light-yellow: #FFD14A;
+$yellow: #F5B700;
+$orange: #F35F3D;
+$light-gray: #EDF0F4;
+$green: #569A98;
+$red: #ff4a4a;
+$gray-border: #edf0f4;
+$faded-gray: #979aa8;
+$border-gray: #e7e7e7;
+
+$Cabin: 'Cabin', sans-serif;
+
+$regular: 400;
+$bold: 700;
+
+$fast-transition: .15s;
+$transition: .3s;
+$slow-transition: .6s;
+$xslow-transition: 1s;
+
+$main-fz: 14px;
+$main-lh: 22px;
+$main-ff: $Cabin;
+$main-text-color: $gray;
+$headings-lh: 1.2;
+
+// grid settings
+$gl-colCount: 24;
+$gl-gridName: grid;
+$gl-colName: col;
+$gl-attributeName: class;
+$gl-gutter: 30px; // Total left + right
+$gl-gutter-vertical: 0;
+$gl-mq-width: 'min-width';
+$gl-mq-list: (
+        xs: 320px,
+        sm: 768px,
+        md: 1200px,
+        lg: 1800px
+);
+
+// media settings
+$breakpoints: (
+        mobile-landscape: 568px,
+        tablet: 768px,
+        tablet-landscape: 1024px,
+        desktop: 1200px,
+        medium-desktop: 1440px,
+        large-desktop: 1800px,
+        ultra-desktop: 2400px
+);
+
+$images-path: '../images/';
+
+/* fonts */
+$main-font: 'Roboto';
+$title-font: 'Source Sans Pro';
+
+$default-fonts: $main-font, 'sans-serif';
+$title-fonts: $title-font, $main-font, 'sans-serif';

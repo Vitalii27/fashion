@@ -1,0 +1,95 @@
+var S_i_F = (function ($) {
+
+
+  var $form;
+  var _name;
+  var $select;
+  var $checkboxes;
+  // private methods
+
+  var init = function (formSelector, name) {
+    $form = $(formSelector);
+    _name = name;
+    $select = $form.find('select[name="' + _name + '"]');
+    $checkboxes = $form.find('input:checkbox[name="' + _name + '"]');
+
+    if (!$select.length || !$checkboxes.length) return;
+
+    $select.on("change", setCheckboxes);
+    $checkboxes.on("change", setSelect);
+
+    toggleInputType();
+    $(window).on("resize", toggleInputType);
+
+  }; // init
+
+  var disableSelect = function () {
+    $select.attr("disabled", true);
+    // refresh
+    $select.selectpicker('refresh');
+  };
+
+  var enableSelect = function () {
+    $select.removeAttr("disabled");
+    // refresh
+    $select.selectpicker('refresh');
+  };
+
+  var disableCheckboxes = function () {
+    $checkboxes.prop("disabled", true);
+  };
+
+  var enableCheckboxes = function () {
+    $checkboxes.removeAttr("disabled");
+  };
+
+  var setSelect = function () {
+    var value = [];
+
+    $checkboxes.each(function () {
+      if ($(this).attr("checked")) {
+        value.push($(this).val());
+      }
+    });
+
+    $select.val(value);
+    //refresh
+    $select.selectpicker('refresh');
+  };
+
+  var setCheckboxes = function () {
+    var value = $select.val();
+    if (!value) value = [];
+
+    $checkboxes.each(function () {
+      if ( value.indexOf($(this).val()) !== -1 ) {
+        $(this).attr("checked", true);
+      } else {
+        $(this).attr("checked", false);
+      }
+    });
+  };
+
+  var toggleInputType = function () {
+    var mql = window.matchMedia("only screen and (max-width: 47.375rem)");
+    // console.log(mql.matches);
+    if (mql.matches) {
+      // console.log("enable select");
+      enableSelect();
+      disableCheckboxes();
+    } else {
+      // console.log("disable select");
+      disableSelect();
+      enableCheckboxes();
+    }
+  };
+
+  return {
+    // public methods
+    init: init
+  }
+}(jQuery));
+
+jQuery(function ($) {
+  //S_i_F.init(".portfolio-filter", "portfolio_type");
+});

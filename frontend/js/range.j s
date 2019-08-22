@@ -1,0 +1,59 @@
+// fillter range slider
+$(function () {
+
+	var $filterRange = $(".js-range");
+	var $rangeSlider = $filterRange.find('#slider-range');
+	var $minInput = $filterRange.find('#amount-min');
+	var $maxInput = $filterRange.find('#amount-max');
+	var $minText = $filterRange.find('.js-range-min span');
+	var $maxText = $filterRange.find('.js-range-max span');
+	var minRange = parseInt($minInput.data('default'));
+	var maxRange = parseInt($maxInput.data('default'));
+
+	// init range slider
+	$rangeSlider.slider({
+		range: true,
+		min: minRange,
+		max: maxRange,
+		values: [$minInput.val(), $maxInput.val()],
+		slide: function (event, ui) {
+			$minInput.val(ui.values[0]).trigger("change");
+			$maxInput.val(ui.values[1]).trigger("change");
+			$minText.html(ui.values[0]);
+			$maxText.html(ui.values[1]);
+		}
+	});
+
+	// set range text
+	$minText.html(minRange);
+	$maxText.html(maxRange);
+
+	// listen inputs changes
+	$minInput.add($maxInput).change(function () {
+		var valueMin = parseInt($minInput.val());
+		var valueMax = parseInt($maxInput.val());
+
+		if (valueMin > valueMax) {
+			valueMin = valueMax;
+		}
+		if (valueMin < minRange) {
+			valueMin = minRange;
+		}
+		if (valueMax > maxRange) {
+			valueMax = maxRange;
+		}
+
+		// set slider values = input values
+		$rangeSlider.slider("option", "values", [valueMin, valueMax]);
+
+		// set input values = slider values
+		$minInput.val(valueMin);
+		$maxInput.val(valueMax);
+
+		// set range text  = slider values
+		$minText.html(valueMin);
+		$maxText.html(valueMax);
+	});
+
+});
+// fillter price slider end

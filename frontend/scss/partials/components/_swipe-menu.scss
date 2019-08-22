@@ -1,0 +1,81 @@
+$swipe-menu-width: 300px;
+$swipe-menu-z-index: 2;
+$swipe-menu-transition: transform .5s ease-out;
+
+.swipe-menu {
+  display: none;
+}
+
+// show menu only on mobile
+@media only screen and (max-width: $screen-sm-max) {
+  // css transform optimization
+  .menu-btn,
+  .swipe-menu,
+  .header,
+  .main-content,
+  .footer {
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+  .menu-btn,
+  .header,
+  .main-content,
+  .footer {
+    transform: translateX(0);
+    transition: $swipe-menu-transition;
+  }
+  .menu-btn {
+    z-index: $swipe-menu-z-index + 2;
+  }
+  .swipe-menu {
+    display: block;
+    height: 100%;
+    width: 100%;
+    max-width: $swipe-menu-width;
+    padding: 2rem;
+    padding-top: 6rem;
+    font-size: 1.6rem;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    transform: translateX($swipe-menu-width);
+    transition: $swipe-menu-transition;
+    background: rgba($white, .9);
+    color: $white;
+    z-index: $swipe-menu-z-index;
+  }
+
+  body.is-swipe-menu-shown {
+    .menu-btn {
+      transform: translateX(70 - $swipe-menu-width);
+    }
+    .header {
+      visibility: hidden;
+    }
+    .toggle-menu {
+      visibility: visible;
+    }
+    .swipe-menu {
+      transform: translateX(0);
+      box-shadow: 0 -2px 5px 2px rgba(0, 0, 0, 0.4);
+    }
+    .header,
+    .main-content,
+    .footer {
+      transform: translateX(-$swipe-menu-width);
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba($black, 0.75);
+        z-index: $swipe-menu-z-index - 1;
+      }
+    }
+  }
+}
+

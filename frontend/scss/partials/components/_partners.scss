@@ -1,0 +1,25 @@
+.partners {
+  background-color: #F3F3F3;
+  padding-top: 50px;
+  padding-bottom: 60px;
+  h2 {
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+    text-transform: uppercase;
+    color: $black;
+    text-align: left;
+  }
+  ul{
+    display: flex;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-top: 48px;
+    align-items: center;
+    li{
+      margin-right: 20px;
+      margin-left: 20px;
+      flex-basis: calc(16.6666% - 40px);
+    }
+  }
+}
