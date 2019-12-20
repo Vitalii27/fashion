@@ -1,0 +1,23 @@
+.breadcrumbs{
+  ul{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    li{
+      a,span{
+        font-size: 13px;
+        line-height: 20px;
+          color: #B4B4B4;
+      }
+      span{
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      a{
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

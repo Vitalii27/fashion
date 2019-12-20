@@ -5,7 +5,7 @@ jQuery(function ($) {
 	var $menu = $('.swipe-menu');
 	var $close = $('.js-menu-close');
 	var $wrapper = $("body");
-	var startBreakpoint = "48em";
+	var startBreakpoint = "1024px";
 
 	// show/hide menu functions
 	function showMenu() {

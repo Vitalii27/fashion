@@ -1,21 +1,103 @@
 .footer {
-  position: relative;
-  padding: 7rem 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  text-align: center;
-  &:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-color: rgba($black, .5);
+  background-color: #1D1D1D;
+  padding-top: 50px;
+  color: $white;
+  .container {
+    text-align: center;
+    @include media(">=desktop") {
+      display: flex;
+      text-align: left;
+    }
   }
-  .logo {
-    position: relative;
-    margin: auto;
+  .footer-contacts {
+
+    width: 100%;
+
+    @include media(">=desktop") {
+      margin-right: 160px;
+      padding-bottom: 24px;
+      max-width: 230px;
+    }
+    .logo {
+
+      margin-bottom: 30px;
+      @include media(">=desktop") {
+
+        max-width: 163px;
+      }
+    }
+    p {
+      margin-bottom: 20px;
+    }
+
+    address {
+      font-size: 15px;
+      line-height: 23px;
+      & + p {
+        font-size: 15px;
+        line-height: 23px;
+      }
+    }
+  }
+  .footer-menu {
+    padding-bottom: 20px;
+    @include media(">=desktop") {
+      columns: 3;
+      padding-bottom: 0;
+    }
+    li {
+
+      a {
+        font-size: 15px;
+        line-height: 45px;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .footer-bottom {
+    border: 1px solid #272727;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    .copy {
+
+      line-height: 23px;
+      @include media(">=desktop") {
+        max-width: 286px;
+        width: 100%;
+        margin-right: 100px;
+      }
+    }
+    ul {
+
+      @include media(">=desktop") {
+        display: flex;
+      }
+      li {
+        &:first-child {
+          @include media(">=desktop") {
+            margin-right: 175px;
+
+          }
+        }
+        a {
+          text-decoration: underline;
+          font-size: 15px;
+          line-height: 23px;
+        }
+      }
+    }
+  }
+}
+.socials {
+  display: flex;
+  margin-bottom: 30px;
+  justify-content: center;
+  @include media(">=desktop") {
+    justify-content: flex-start;
+  }
+  li {
+    margin-right: 18px;
   }
 }

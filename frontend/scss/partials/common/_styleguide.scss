@@ -242,7 +242,33 @@ select {
     border-color: $primary-color;
   }
 }
+.button.read-more{
+  position: relative;
+  padding-left: 70px;
 
+  &:before{
+    content: '';
+    height: 2px;
+    width: 15px;
+    background-color: $white;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+  }
+  &:after{
+    content: '';
+    height: 15px;
+    width: 2px;
+    background-color: $white;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 47px;
+    transform: translateY(-50%);
+  }
+}
 .button,
 .submit-holder,
 input[type="submit"],
@@ -266,6 +292,15 @@ button {
   box-shadow: 0px 5px 20px rgba(243, 95, 61, 0.3);
   border-radius: 4px;
   transition: box-shadow .25s, background-color .25s;
+  &.hollow{
+    background-color: transparent;
+    border: 1px solid $orange;
+    color: $black;
+    box-shadow: none;
+    &:hover{
+      color: $white;
+    }
+  }
   &:hover{
     background-color: #F37457;
     box-shadow: 0px 5px 20px rgba(243, 95, 61, 0.3);
@@ -327,7 +362,7 @@ body.touch {
 }
 
 input[type="checkbox"] {
-  position: absolute;
+  //position: absolute;
   opacity: 0;
   height: 100%;
   width: 100%;
@@ -337,11 +372,11 @@ input[type="checkbox"] {
       span {
         color: $black;
         &:before {
-          background: $blue;
-          border-color: transparent;
+          background: $white;
+          border-color: $orange;
         }
         &:after {
-          border-color: $white;
+          border-color: $orange;
         }
       }
 
@@ -351,7 +386,7 @@ input[type="checkbox"] {
     & + label {
       span {
         &:after {
-          border-color: $blue;
+          border-color: $orange;
         }
       }
     }
@@ -359,7 +394,7 @@ input[type="checkbox"] {
       & + label {
         span {
           &:after {
-            border-color: $white;
+            border-color:  $orange;
           }
         }
       }
@@ -390,7 +425,7 @@ input[type="checkbox"] {
     letter-spacing: 0;
     span {
       position: relative;
-      color: $gray;
+      color: $black;
       transition: color $transition;
       &:before {
         position: absolute;
@@ -432,7 +467,7 @@ input[type="radio"] {
       span {
         color: $black;
         &:before {
-          background: $blue;
+          background: $orange;
           border-color: transparent;
         }
         &:after {
@@ -445,7 +480,7 @@ input[type="radio"] {
     & + label {
       span {
         &:after {
-          background: $blue;
+          background: $orange;
         }
       }
     }
@@ -517,7 +552,6 @@ label {
   font-size: 12px;
   line-height: 20px;
   margin-bottom: 7px;
-  letter-spacing: 2px;
   span {
     color: $blue;
   }

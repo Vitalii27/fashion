@@ -1,9 +1,10 @@
 jQuery(function ($) {
-    var $accrodions = $(".js-accordions");
-    var $accrodion = $accrodions.find(".accordion");
+    var $accrodions = $(".accordion");
+    var $accrodion = $accrodions.find(".item");
     var closeClass = "is-close";
     var speed = 200;
     var isClose = false;
+
 
     function openAccordion() {
         closeAll();
@@ -45,4 +46,14 @@ jQuery(function ($) {
         var height = $('.text-content-more .content-vissible').height();
         $('.text-content-more .content').css('height', height)
     })
+
+    $('.sidebar-vissible').on('click', function (e) {
+        e.preventDefault();
+        if (!$('.products-sidebar').hasClass('sidebar-open')) {
+            $('.products-sidebar').addClass('sidebar-open')
+        } else {
+            $('.products-sidebar').removeClass('sidebar-open')
+        }
+    })
+
 });

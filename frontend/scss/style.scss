@@ -25,6 +25,7 @@
 /* LAYOUT END */
 /* -------------------- */
 /* BLOCKS */
+@import "partials/components/tags";
 @import "partials/components/menu-btn";
 @import "partials/components/swipe-menu";
 @import "partials/components/pop-up";
@@ -35,9 +36,26 @@
 @import "partials/components/homepage";
 @import "partials/components/title";
 @import "partials/components/home-tab";
-@import "partials/components/reviews";
+@import "partials/components/reviews-section";
 @import "partials/components/partners";
 @import "partials/components/text-content";
+
+@import "partials/components/breadcrumbs";
+@import "partials/components/listing";
+@import "partials/components/pagination";
+@import "partials/components/product-details";
+@import "partials/components/cart";
+@import "partials/components/404";
+@import "partials/components/payment-methods";
+@import "partials/components/contacts";
+@import "partials/components/brands";
+@import "partials/components/sizes";
+@import "partials/components/rules";
+@import "partials/components/certificates";
+@import "partials/components/action";
+@import "partials/components/checkout-page";
+@import "partials/components/featured-products";
+
 
 @import "partials/components/footer";
 /* BLOCKS END*/

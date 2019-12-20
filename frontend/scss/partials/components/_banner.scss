@@ -1,6 +1,13 @@
 .home-banner {
-  margin-top: 50px;
+  padding-top: 50px;
   margin-bottom: 40px;
+  margin-top: -1px;
+  .slider_btn{
+    display: none !important;
+    @include media(">=desktop") {
+      display: block !important;
+    }
+  }
   .banner {
     background-position: center;
     background-repeat: no-repeat;
@@ -9,31 +16,55 @@
     height: 390px;
 
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 
+    @include media(">=desktop") {
+      display: block;
+      text-align: left;
+    }
     .holder {
-      max-width: 375px;
-      width: 100%;
-      position: absolute;
-      right: 16%;
-      top: 50%;
-      transform: translateY(-50%);
+
+      @include media(">=desktop") {
+        top: 50%;
+        position: absolute;
+        max-width: 375px;
+        width: 100%;
+        right: 16%;
+        transform: translateY(-50%);
+
+      }
       p {
         font-style: normal;
         font-weight: normal;
-        font-size: 24px;
-        line-height: 28px;
+        font-size: 16px;
+        line-height: 20px;
+        @include media(">=desktop") {
+          font-size: 24px;
+          line-height: 28px;
+        }
       }
       h2 {
-        font-size: 60px;
-        line-height: 70px;
+        font-size: 30px;
+        line-height: 40px;
         color: $white;
         font-weight: 600;
         margin-top: 10px;
+        @include media(">=desktop") {
+          font-size: 60px;
+          line-height: 70px;
+        }
       }
       a {
-
+        //display: none;
         margin-top: 26px;
-        min-width: 250px;
+        @include media(">=desktop") {
+          min-width: 250px;
+
+        }
 
       }
     }

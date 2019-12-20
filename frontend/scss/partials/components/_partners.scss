@@ -4,22 +4,38 @@
   padding-bottom: 60px;
   h2 {
     font-weight: bold;
-    font-size: 36px;
-    line-height: 42px;
+    font-size: 30px;
+    line-height: 35px;
     text-transform: uppercase;
     color: $black;
-    text-align: left;
+    text-align: center;
+    @include media(">=desktop") {
+      text-align: left;
+      font-size: 36px;
+      line-height: 42px;
+    }
   }
-  ul{
-    display: flex;
-    margin-left: -20px;
-    margin-right: -20px;
-    margin-top: 48px;
+  ul {
+
+    margin-top: 30px;
     align-items: center;
-    li{
-      margin-right: 20px;
-      margin-left: 20px;
-      flex-basis: calc(16.6666% - 40px);
+    @include media(">=desktop") {
+      display: flex;
+      margin-left: -20px;
+      margin-right: -20px;
+      margin-top: 48px;
+
+    }
+    li {
+      text-align: center;
+      margin-top: 40px;
+      @include media(">=desktop") {
+        margin-right: 20px;
+        margin-left: 20px;
+        text-align: left;
+        margin-top: 0;
+        flex-basis: calc(16.6666% - 40px);
+      }
     }
   }
 }

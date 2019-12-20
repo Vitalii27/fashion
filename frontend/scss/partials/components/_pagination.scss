@@ -1,0 +1,29 @@
+.pagination {
+  a, span {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  a{
+    &:hover{
+      color: $orange;
+    }
+  }
+  .hidden{
+    svg{
+      opacity: .6;
+    }
+  }
+  .current{
+    color: $orange;
+    text-decoration: underline;
+  }
+  svg {
+    fill: $black;
+
+  }
+.previouspostslink{
+  svg{
+    transform: rotate(-180deg);
+  }
+}
+}
